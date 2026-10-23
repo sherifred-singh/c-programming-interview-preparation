@@ -1,0 +1,23 @@
+# Build outputs
+build/
+bin/
+obj/
+*.o
+*.a
+*.exe
+*.out
+*.elf
+*.hex
+*.bin
+*.map
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.bak
+*.orig
+
+# Target IDE projects
+Debug/
+Release/
