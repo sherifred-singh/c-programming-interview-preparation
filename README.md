@@ -27,8 +27,8 @@ Every program in this repository adheres to three core tenets:
 | :---: | :--- | :--- | :---: |
 | **[Day 01](./Day-01-Basic-C-Programs/)** | **Basic C Programs & Bitwise Foundations** | Bitwise `& 1` vs `% 2`, integer overflow guards, integer square root, Kernighan set bits, string pointers vs arrays | ✅ Complete (11 Programs) |
 | **[Day 02](./Day-02-Pointers-And-Memory/)** | **Pointers & Memory Architecture** | Pointer arithmetic scaling (`sizeof(*ptr)`), `const` qualifier matrix, register access patterns | ✅ Complete (2 Programs) |
-| **Day 03** | **Bit Manipulation & Silicon Register Mapping** | SET_BIT, CLEAR_BIT, TOGGLE_BIT, CHECK_BIT macros, bitfield packing, endianness detection | ⏳ Next Up |
-| **Day 04** | **Volatile Keyword & Compiler Optimizations** | Memory-mapped I/O, ISR shared flags, `-O2` register caching pitfalls, read-modify-write | ⏳ Upcoming |
+| **[Day 03](./Day-03-Bit-Manipulation-And-Registers/)** | **Bit Manipulation & Silicon Register Mapping** | SET_BIT, CLEAR_BIT, TOGGLE_BIT, CHECK_BIT macros, bitfield packing, endianness detection | ✅ Complete (5 Programs) |
+| **Day 04** | **Volatile Keyword & Compiler Optimizations** | Memory-mapped I/O, ISR shared flags, `-O2` register caching pitfalls, read-modify-write | ⏳ Next Up |
 | **Day 05** | **Structure Padding, Alignment & Packing** | Natural memory alignment, `#pragma pack(1)`, `__attribute__((packed))`, offset calculation | ⏳ Upcoming |
 | **Day 06** | **CPU Interrupt Lifecycle & ISR Rules** | IVT vectors, context save/restore, hardware flag clearing, latency & reentrancy | ⏳ Upcoming |
 | **Day 07** | **Week 1 Speed Drills & Consolidation** | 15-minute speed drills: power-of-2, byte swaps, reverse words, bit count benchmarks | ⏳ Upcoming |
@@ -88,6 +88,13 @@ Every program in this repository adheres to three core tenets:
 ### Day 02 — Pointers & Memory Architecture
 1. **`01_pointer_arithmetic.c`** — Demonstrating pointer increment scaling: `ptr + 1` advances by `sizeof(*ptr)` bytes across `uint8_t`, `uint16_t`, and `uint32_t`.
 2. **`02_const_pointers.c`** — The "Clockwise / Right-to-Left" rule for `const int *`, `int * const`, and `const int * const` in peripheral driver design.
+
+### Day 03 — Bit Manipulation & Silicon Register Mapping
+1. **`01_bitwise_macros.c`** — Standard embedded register macros (`SET`, `CLEAR`, `TOGGLE`, `CHECK`, `MODIFY`) and why `1U` avoids signed overflow.
+2. **`02_bit_packing_extract.c`** — Bit packing and extraction for telemetry words; why manual masking is preferred over non-portable struct bitfields.
+3. **`03_endianness_check_swap.c`** — Runtime Little-Endian vs Big-Endian check; 16-bit and 32-bit byte reversal (`REV16`, `REV32`) for Modbus/CAN.
+4. **`04_swap_nibbles.c`** — Swapping upper and lower 4-bit nibbles in an 8-bit byte for 4-bit parallel display buses (e.g. HD44780 LCD).
+5. **`05_circular_bit_rotation.c`** — Circular left and right bit rotation (ROL, ROR) for 8-bit and 32-bit words without bit loss.
 
 ---
 
