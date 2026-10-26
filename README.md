@@ -1,11 +1,11 @@
-# C Programming Interview Preparation
+# C Programming Interview Preparation (30-Day Master Track)
 
 [![Language](https://img.shields.io/badge/Language-Embedded%20C%20(C99)-00599C?style=for-the-badge&logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C_(programming_language))
 [![Target](https://img.shields.io/badge/Target-ARM%20Cortex--M%20%2F%20Embedded%20Systems-032347?style=for-the-badge&logo=arm&logoColor=white)](https://developer.arm.com)
 [![Standard](https://img.shields.io/badge/Standard-MISRA--C%20Mindset-2E8B57?style=for-the-badge)](https://en.wikipedia.org/wiki/MISRA_C)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
-> **Curated daily repository of essential C programming interview questions, memory architecture concepts, bitwise techniques, and compilable implementations tailored for Embedded Firmware and Systems Engineers.**
+> **Curated 30-day repository of essential C programming interview questions, memory architecture concepts, bitwise techniques, and compilable implementations tailored for Embedded Firmware and Systems Engineers.**
 
 ---
 
@@ -20,17 +20,53 @@ Every program in this repository adheres to three core tenets:
 
 ---
 
-## 📅 Daily Curriculum & Roadmap
+## 📅 30-Day Master Curriculum & Roadmap
 
+### 🧱 Week 1: Core C, Bitwise & Silicon Registers (Days 01 – 07)
 | Module | Topic Focus | Key Concepts & Hardware Insights | Status |
 | :---: | :--- | :--- | :---: |
 | **[Day 01](./Day-01-Basic-C-Programs/)** | **Basic C Programs & Bitwise Foundations** | Bitwise `& 1` vs `% 2`, integer overflow guards, integer square root, Kernighan set bits, string pointers vs arrays | ✅ Complete (11 Programs) |
 | **[Day 02](./Day-02-Pointers-And-Memory/)** | **Pointers & Memory Architecture** | Pointer arithmetic scaling (`sizeof(*ptr)`), `const` qualifier matrix, register access patterns | ✅ Complete (2 Programs) |
-| **Day 03** | **Bit Manipulation & Register Mapping** | Setting, clearing, toggling, bitfields, register masks, endianness detection | ⏳ In Progress |
-| **Day 04** | **Structs, Unions & Memory Alignment** | Struct padding, `#pragma pack`, `attribute((packed))`, hardware overlay unions | ⏳ Upcoming |
-| **Day 05** | **Storage Classes & Linker Scopes** | `volatile`, `static`, `extern`, `.data`, `.bss`, `.rodata`, stack memory layouts | ⏳ Upcoming |
-| **Day 06** | **Embedded Data Structures** | Lock-free SPSC circular ring buffers, static allocation without dynamic heap (`malloc`) | ⏳ Upcoming |
-| **Day 07** | **State Machines & Concurrency** | Table-driven Finite State Machines (FSM), interrupt-safe flags, critical sections | ⏳ Upcoming |
+| **Day 03** | **Bit Manipulation & Silicon Register Mapping** | SET_BIT, CLEAR_BIT, TOGGLE_BIT, CHECK_BIT macros, bitfield packing, endianness detection | ⏳ Next Up |
+| **Day 04** | **Volatile Keyword & Compiler Optimizations** | Memory-mapped I/O, ISR shared flags, `-O2` register caching pitfalls, read-modify-write | ⏳ Upcoming |
+| **Day 05** | **Structure Padding, Alignment & Packing** | Natural memory alignment, `#pragma pack(1)`, `__attribute__((packed))`, offset calculation | ⏳ Upcoming |
+| **Day 06** | **CPU Interrupt Lifecycle & ISR Rules** | IVT vectors, context save/restore, hardware flag clearing, latency & reentrancy | ⏳ Upcoming |
+| **Day 07** | **Week 1 Speed Drills & Consolidation** | 15-minute speed drills: power-of-2, byte swaps, reverse words, bit count benchmarks | ⏳ Upcoming |
+
+### 🔌 Week 2: Serial Protocols, Buffers & Peripheral Drivers (Days 08 – 14)
+| Module | Topic Focus | Key Concepts & Hardware Insights | Status |
+| :---: | :--- | :--- | :---: |
+| **Day 08** | **UART Peripheral & Circular FIFO Ring Buffer** | Lock-free SPSC circular buffer, overflow protection, atomic head/tail pointers | ⏳ Upcoming |
+| **Day 09** | **RS-485 Modbus RTU Framing & Transceiver Timing** | Half-duplex DE/RE timing, `TRMT` vs `TXIF` shift-register trap, fast CRC-16 table | ⏳ Upcoming |
+| **Day 10** | **I2C Bus Protocol, 9-Clock Recovery & EEPROM** | Open-drain pull-up sizing, page boundary rollovers, 9-clock bus-clear recovery routine | ⏳ Upcoming |
+| **Day 11** | **SPI Bus Modes (0–3) & Sensor Interfacing** | CPOL/CPHA timing, PT100 RTD 3-wire bridge compensation, series damping resistors | ⏳ Upcoming |
+| **Day 12** | **ADC Mechanics, Calibration & Digital Filters** | Resolution step size, sampling capacitor acquisition time, fixed-point EMA & Median-3 | ⏳ Upcoming |
+| **Day 13** | **Hardware Timers, PWM & Software Timer Wheels** | Prescalers, capture/compare, tick-list non-blocking software timers | ⏳ Upcoming |
+| **Day 14** | **Week 2 Silicon Bring-Up & Board Diagnostics** | 5-step hardware bring-up sequence, cold resistance, oscilloscope probing, current limit | ⏳ Upcoming |
+
+### ⚙️ Week 3: Data Structures, RTOS & State Machines (Days 15 – 21)
+| Module | Topic Focus | Key Concepts & Hardware Insights | Status |
+| :---: | :--- | :--- | :---: |
+| **Day 15** | **Finite State Machines (FSM)** | Table-driven transition matrices vs switch-case, deterministic event dispatch | ⏳ Upcoming |
+| **Day 16** | **Memory Pools & Heap Avoidance** | Fixed-size block allocators, avoiding heap fragmentation and non-deterministic `malloc` | ⏳ Upcoming |
+| **Day 17** | **String & Packet Parsing without Heap** | Reentrant tokenizers (`strtok_r`), zero-copy frame slicing, checksum validation | ⏳ Upcoming |
+| **Day 18** | **FreeRTOS Task Mechanics & TCB** | Task states, priority preemptive scheduling, stack watermarking (`uxTaskGetStackHighWaterMark`) | ⏳ Upcoming |
+| **Day 19** | **FreeRTOS Synchronization: Mutex vs Semaphore** | Priority Inversion, Priority Inheritance protocol, binary vs counting semaphores | ⏳ Upcoming |
+| **Day 20** | **FreeRTOS Queues & ISR Context Rules** | `xQueueSendFromISR`, yield from ISR flag, deferred interrupt processing (bottom halves) | ⏳ Upcoming |
+| **Day 21** | **System Architecture & Safety Interlocks** | Break-before-make interlocks, capacitive power-fail brownout flush, fault latches | ⏳ Upcoming |
+
+### 🚀 Week 4: Advanced Scenarios & Offer Conversion (Days 22 – 30)
+| Module | Topic Focus | Key Concepts & Hardware Insights | Status |
+| :---: | :--- | :--- | :---: |
+| **Day 22** | **Bootloader Fundamentals & Vector Relocation** | Flash dual-banking, vector table offset (`SCB->VTOR`), application jump validation | ⏳ Upcoming |
+| **Day 23** | **Watchdog Timers (IWDG / WWDG) & Brown-Out Reset** | Independent vs window watchdog, windowed kicking loops, brown-out voltage trips | ⏳ Upcoming |
+| **Day 24** | **Direct Memory Access (DMA) & Double Buffering** | Ping-pong buffer architectures, DMA transfer complete interrupts, cache coherency | ⏳ Upcoming |
+| **Day 25** | **CAN 2.0B Controller & Automotive Telemetry** | 11-bit vs 29-bit identifiers, bit timing, acceptance filters, bus-off auto recovery | ⏳ Upcoming |
+| **Day 26** | **Low-Power Modes & Power Management** | Sleep / Stop / Standby modes, clock gating, RTC wake-up interrupts | ⏳ Upcoming |
+| **Day 27** | **Data Integrity & Checksum Engines** | Fast lookup-table CRC-32, modular arithmetic check, anti-tampering checksums | ⏳ Upcoming |
+| **Day 28** | **Defensive Programming & MISRA-C Safety** | Mandatory type sizes, side-effect avoidance, pointer aliasing, defensive assertions | ⏳ Upcoming |
+| **Day 29** | **Live Coding Simulation: Telemetry Packet Engine** | Full 30-minute end-to-end coding test: frame builder, CRC calculation, UART dispatch | ⏳ Upcoming |
+| **Day 30** | **30-Day Master Capstone & Cheatsheet** | Complete consolidated embedded interview revision package and quick reference | ⏳ Upcoming |
 
 ---
 
