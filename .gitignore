@@ -21,3 +21,8 @@ obj/
 # Target IDE projects
 Debug/
 Release/
+
+# Python cache
+__pycache__/
+*.pyc
+.current_day_commit_msg
