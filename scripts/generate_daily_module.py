@@ -63,8 +63,8 @@ def generate_module_readme(day_info):
     for idx, p in enumerate(programs, 1):
         lines.append(f"### {idx}. {p['focus']}")
         lines.append(f"- **Key Silicon Insight:** {p['insight']}")
-        lines.append(f"- **Interview Follow-Up Q:** *{p['follow_up_q']}*")
-        lines.append(f"- **Candidate Defense:** {p['follow_up_a']}\n")
+        lines.append(f"- **Technical Design Question:** *{p['follow_up_q']}*")
+        lines.append(f"- **Engineering Rationale:** {p['follow_up_a']}\n")
 
     lines.append("---\n")
     lines.append("## 🛠 How to Compile & Run\n")
