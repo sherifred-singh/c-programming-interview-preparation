@@ -28,8 +28,8 @@ Every program in this repository adheres to three core tenets:
 | **[Day 01](./Day-01-Basic-C-Programs/)** | **Basic C Programs & Bitwise Foundations** | Bitwise `& 1` vs `% 2`, integer overflow guards, integer square root, Kernighan set bits, string pointers vs arrays | ✅ Complete (11 Programs) |
 | **[Day 02](./Day-02-Pointers-And-Memory/)** | **Pointers & Memory Architecture** | Pointer arithmetic scaling (`sizeof(*ptr)`), `const` qualifier matrix, register access patterns | ✅ Complete (2 Programs) |
 | **[Day 03](./Day-03-Bit-Manipulation-And-Registers/)** | **Bit Manipulation & Silicon Register Mapping** | SET_BIT, CLEAR_BIT, TOGGLE_BIT, CHECK_BIT macros, bitfield packing, endianness detection | ✅ Complete (5 Programs) |
-| **Day 04** | **Volatile Keyword & Compiler Optimizations** | Memory-mapped I/O, ISR shared flags, `-O2` register caching pitfalls, read-modify-write | ⏳ Next Up |
-| **Day 05** | **Structure Padding, Alignment & Packing** | Natural memory alignment, `#pragma pack(1)`, `__attribute__((packed))`, offset calculation | ⏳ Upcoming |
+| **[Day 04](./Day-04-Volatile-And-Optimization/)** | **Volatile Keyword & Compiler Optimizations** | Memory-mapped I/O, ISR shared flags, `-O2` register caching pitfalls, read-modify-write | ✅ Complete (2 Programs) |
+| **Day 05** | **Structure Padding, Alignment & Packing** | Natural memory alignment, `#pragma pack(1)`, `__attribute__((packed))`, offset calculation | ⏳ Next Up |
 | **Day 06** | **CPU Interrupt Lifecycle & ISR Rules** | IVT vectors, context save/restore, hardware flag clearing, latency & reentrancy | ⏳ Upcoming |
 | **Day 07** | **Week 1 Speed Drills & Consolidation** | 15-minute speed drills: power-of-2, byte swaps, reverse words, bit count benchmarks | ⏳ Upcoming |
 
@@ -95,6 +95,13 @@ Every program in this repository adheres to three core tenets:
 3. **`03_endianness_check_swap.c`** — Runtime Little-Endian vs Big-Endian check; 16-bit and 32-bit byte reversal (`REV16`, `REV32`) for Modbus/CAN.
 4. **`04_swap_nibbles.c`** — Swapping upper and lower 4-bit nibbles in an 8-bit byte for 4-bit parallel display buses (e.g. HD44780 LCD).
 5. **`05_circular_bit_rotation.c`** — Circular left and right bit rotation (ROL, ROR) for 8-bit and 32-bit words without bit loss.
+
+---
+
+
+### Day 04 — Volatile Keyword & Compiler Optimizations
+1. **`01_volatile_isr_flag.c`** — Volatile Shared Flag between ISR and Main Loop. Without volatile, gcc -O2 caches the flag in a CPU register (e.g. R4), turning 'while(!flag)' into an infinite loop!
+2. **`02_hardware_register_access.c`** — Volatile Pointer to Memory-Mapped Peripheral Registers. Hardware registers can change state autonomously (e.g. status flags set by silicon). Volatile prevents dead-code elimination.
 
 ---
 
