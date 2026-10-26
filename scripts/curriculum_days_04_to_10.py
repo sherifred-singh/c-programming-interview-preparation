@@ -115,7 +115,7 @@ int main(void)
 static uint32_t s_mock_peripheral_memory[4] = {0};
 
 #define SIM_STATUS_REG  (*(volatile uint32_t *)&s_mock_peripheral_memory[0])
-#define SIM_CONTROL_REG (*volatile uint32_t *)&s_mock_peripheral_memory[1])
+#define SIM_CONTROL_REG (*(volatile uint32_t *)&s_mock_peripheral_memory[1])
 #define SIM_DATA_REG    (*(volatile uint32_t *)&s_mock_peripheral_memory[2])
 
 #define STATUS_TX_EMPTY_BIT (1U << 0)
