@@ -1,0 +1,62 @@
+name: Daily C Interview Prep Auto-Updater
+
+on:
+  schedule:
+    # Runs automatically every day at 03:30 UTC (09:00 AM IST)
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+    # Allows manual one-click trigger anytime from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  daily-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up GCC & Build Tools
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y gcc make
+
+      - name: Run Daily Module Generator
+        run: |
+          python scripts/generate_daily_module.py
+
+      - name: Verify All C Programs Compile with Strict Warnings
+        run: |
+          echo "Compiling all C programs across all days..."
+          for file in Day-*/*.c; do
+            if [ -f "$file" ]; then
+              echo "Testing compilation: $file"
+              gcc -Wall -Wextra -std=c99 -pedantic "$file" -o /dev/null
+            fi
+          done
+          echo "All C programs compiled cleanly with zero warnings!"
+
+      - name: Commit and Push Daily Progress
+        run: |
+          git config --global user.name "Sherifred singh"
+          git config --global user.email "ssherifred@gmail.com"
+          
+          if [ -f ".current_day_commit_msg" ]; then
+            COMMIT_MSG="feat(daily): $(cat .current_day_commit_msg)"
+            rm -f .current_day_commit_msg
+            git add .
+            git commit -m "$COMMIT_MSG"
+            git push origin main
+            echo "Successfully pushed daily progress to main!"
+          else
+            echo "No new module generated; working tree is up to date."
+          fi
