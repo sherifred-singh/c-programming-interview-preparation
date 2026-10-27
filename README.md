@@ -13,10 +13,6 @@
 
 Firmware and embedded systems interviews evaluate foundational C knowledge with an emphasis on **hardware awareness**, **memory efficiency**, and **deterministic execution**. 
 
-Every program in this repository adheres to three core tenets:
-1. **Natural, Human-Written Code:** Clean, standard C99 with meaningful identifier names, sensible input boundaries, and zero artificial bloat or overengineering.
-2. **Embedded Hardware Insight:** Concrete explanations of how each algorithm interacts with hardware (register allocation, cycle costs on MCUs without hardware dividers, avoidance of stack explosion, cache/memory alignment, and volatile/const qualification).
-3. **Structured Daily Progression:** Modular daily folders allowing continuous daily practice without breaking or altering previous sessions.
 
 ---
 
