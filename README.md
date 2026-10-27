@@ -29,8 +29,8 @@ Every program in this repository adheres to three core tenets:
 | **[Day 02](./Day-02-Pointers-And-Memory/)** | **Pointers & Memory Architecture** | Pointer arithmetic scaling (`sizeof(*ptr)`), `const` qualifier matrix, register access patterns | ✅ Complete (2 Programs) |
 | **[Day 03](./Day-03-Bit-Manipulation-And-Registers/)** | **Bit Manipulation & Silicon Register Mapping** | SET_BIT, CLEAR_BIT, TOGGLE_BIT, CHECK_BIT macros, bitfield packing, endianness detection | ✅ Complete (5 Programs) |
 | **[Day 04](./Day-04-Volatile-And-Optimization/)** | **Volatile Keyword & Compiler Optimizations** | Memory-mapped I/O, ISR shared flags, `-O2` register caching pitfalls, read-modify-write | ✅ Complete (2 Programs) |
-| **Day 05** | **Structure Padding, Alignment & Packing** | Natural memory alignment, `#pragma pack(1)`, `__attribute__((packed))`, offset calculation | ⏳ Next Up |
-| **Day 06** | **CPU Interrupt Lifecycle & ISR Rules** | IVT vectors, context save/restore, hardware flag clearing, latency & reentrancy | ⏳ Upcoming |
+| **[Day 05](./Day-05-Struct-Padding-And-Alignment/)** | **Structure Padding, Memory Alignment & Packing** | Natural memory alignment, `#pragma pack(1)`, `__attribute__((packed))`, offset calculation | ✅ Complete (2 Programs) |
+| **Day 06** | **CPU Interrupt Lifecycle & ISR Rules** | IVT vectors, context save/restore, hardware flag clearing, latency & reentrancy | ⏳ Next Up |
 | **Day 07** | **Week 1 Speed Drills & Consolidation** | 15-minute speed drills: power-of-2, byte swaps, reverse words, bit count benchmarks | ⏳ Upcoming |
 
 ### 🔌 Week 2: Serial Protocols, Buffers & Peripheral Drivers (Days 08 – 14)
@@ -102,6 +102,13 @@ Every program in this repository adheres to three core tenets:
 ### Day 04 — Volatile Keyword & Compiler Optimizations
 1. **`01_volatile_isr_flag.c`** — Volatile Shared Flag between ISR and Main Loop. Without volatile, gcc -O2 caches the flag in a CPU register (e.g. R4), turning 'while(!flag)' into an infinite loop!
 2. **`02_hardware_register_access.c`** — Volatile Pointer to Memory-Mapped Peripheral Registers. Hardware registers can change state autonomously (e.g. status flags set by silicon). Volatile prevents dead-code elimination.
+
+---
+
+
+### Day 05 — Structure Padding, Memory Alignment & Packing
+1. **`01_struct_padding_alignment.c`** — Natural 32-Bit Memory Alignment & Padding Waste. Reordering struct members from largest to smallest eliminates padding waste and saves 33% RAM per struct instance on 32-bit MCUs.
+2. **`02_pragma_pack_telemetry.c`** — Packed Structs for Network & Fieldbus Serialization. #pragma pack(1) forces exact byte alignment, eliminating padding for over-the-air or RS-485 serial frames.
 
 ---
 
