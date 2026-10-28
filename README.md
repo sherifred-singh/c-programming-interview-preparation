@@ -27,12 +27,12 @@ Firmware and embedded systems interviews evaluate foundational C knowledge with 
 | **[Day 04](./Day-04-Volatile-And-Optimization/)** | **Volatile Keyword & Compiler Optimizations** | Memory-mapped I/O, ISR shared flags, `-O2` register caching pitfalls, read-modify-write | ✅ Complete (2 Programs) |
 | **[Day 05](./Day-05-Struct-Padding-And-Alignment/)** | **Structure Padding, Memory Alignment & Packing** | Natural memory alignment, `#pragma pack(1)`, `__attribute__((packed))`, offset calculation | ✅ Complete (2 Programs) |
 | **[Day 06](./Day-06-Interrupt-Lifecycle-And-ISR-Rules/)** | **CPU Interrupt Lifecycle & ISR Rules** | IVT vectors, context save/restore, hardware flag clearing, latency & reentrancy | ✅ Complete (1 Program) |
-| **Day 07** | **Week 1 Speed Drills & Consolidation** | 15-minute speed drills: power-of-2, byte swaps, reverse words, bit count benchmarks | ⏳ Next Up |
+| **[Day 07](./Day-07-Week-1-Speed-Drills-Consolidation/)** | **Week 1 Speed Drills & Consolidation** | 15-minute speed drills: power-of-2, byte swaps, reverse words, bit count benchmarks | ✅ Complete (1 Program) |
 
 ### 🔌 Week 2: Serial Protocols, Buffers & Peripheral Drivers (Days 08 – 14)
 | Module | Topic Focus | Key Concepts & Hardware Insights | Status |
 | :---: | :--- | :--- | :---: |
-| **Day 08** | **UART Peripheral & Circular FIFO Ring Buffer** | Lock-free SPSC circular buffer, overflow protection, atomic head/tail pointers | ⏳ Upcoming |
+| **Day 08** | **UART Peripheral & Circular FIFO Ring Buffer** | Lock-free SPSC circular buffer, overflow protection, atomic head/tail pointers | ⏳ Next Up |
 | **Day 09** | **RS-485 Modbus RTU Framing & Transceiver Timing** | Half-duplex DE/RE timing, `TRMT` vs `TXIF` shift-register trap, fast CRC-16 table | ⏳ Upcoming |
 | **Day 10** | **I2C Bus Protocol, 9-Clock Recovery & EEPROM** | Open-drain pull-up sizing, page boundary rollovers, 9-clock bus-clear recovery routine | ⏳ Upcoming |
 | **Day 11** | **SPI Bus Modes (0–3) & Sensor Interfacing** | CPOL/CPHA timing, PT100 RTD 3-wire bridge compensation, series damping resistors | ⏳ Upcoming |
@@ -111,6 +111,12 @@ Firmware and embedded systems interviews evaluate foundational C knowledge with 
 
 ### Day 06 — CPU Interrupt Lifecycle & ISR Rules
 1. **`01_interrupt_vector_lookup.c`** — Function Pointer Vector Table Dispatch Simulation. Cortex-M IVT holds 32-bit addresses of ISR functions. Hardware fetches the address directly from Flash upon interrupt assertion.
+
+---
+
+
+### Day 07 — Week 1 Speed Drills & Consolidation
+1. **`01_week1_speed_drill.c`** — 15-Minute Blank Screen Muscle Memory Consolidation. Mastering the top 4 recurring bitwise and memory operations tested in live embedded screening tests.
 
 ---
 
