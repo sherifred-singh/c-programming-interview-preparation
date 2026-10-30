@@ -33,8 +33,8 @@ Firmware and embedded systems interviews evaluate foundational C knowledge with 
 | Module | Topic Focus | Key Concepts & Hardware Insights | Status |
 | :---: | :--- | :--- | :---: |
 | **[Day 08](./Day-08-UART-Ring-Buffer/)** | **UART Peripheral & Circular FIFO Ring Buffer** | Lock-free SPSC circular buffer, overflow protection, atomic head/tail pointers | ✅ Complete (1 Program) |
-| **Day 09** | **RS-485 Modbus RTU Framing & Transceiver Timing** | Half-duplex DE/RE timing, `TRMT` vs `TXIF` shift-register trap, fast CRC-16 table | ⏳ Next Up |
-| **Day 10** | **I2C Bus Protocol, 9-Clock Recovery & EEPROM** | Open-drain pull-up sizing, page boundary rollovers, 9-clock bus-clear recovery routine | ⏳ Upcoming |
+| **[Day 09](./Day-09-RS485-Modbus-RTU-Timing/)** | **RS-485 Modbus RTU Framing & Transceiver Timing** | Half-duplex DE/RE timing, `TRMT` vs `TXIF` shift-register trap, fast CRC-16 table | ✅ Complete (1 Program) |
+| **Day 10** | **I2C Bus Protocol, 9-Clock Recovery & EEPROM** | Open-drain pull-up sizing, page boundary rollovers, 9-clock bus-clear recovery routine | ⏳ Next Up |
 | **Day 11** | **SPI Bus Modes (0–3) & Sensor Interfacing** | CPOL/CPHA timing, PT100 RTD 3-wire bridge compensation, series damping resistors | ⏳ Upcoming |
 | **Day 12** | **ADC Mechanics, Calibration & Digital Filters** | Resolution step size, sampling capacitor acquisition time, fixed-point EMA & Median-3 | ⏳ Upcoming |
 | **Day 13** | **Hardware Timers, PWM & Software Timer Wheels** | Prescalers, capture/compare, tick-list non-blocking software timers | ⏳ Upcoming |
@@ -123,6 +123,12 @@ Firmware and embedded systems interviews evaluate foundational C knowledge with 
 
 ### Day 08 — UART Peripheral & Circular FIFO Ring Buffer
 1. **`01_uart_ring_buffer.c`** — Lock-Free SPSC Circular FIFO Ring Buffer. By using power-of-two buffer sizes, modulo '%' (20-40 cycles) is replaced with bitwise '& (SIZE - 1)' (1 cycle)!
+
+---
+
+
+### Day 09 — RS-485 Modbus RTU Framing & Transceiver Timing
+1. **`01_modbus_crc16.c`** — Standard Modbus CRC-16 Calculation (Polynomial 0xA001). Modbus transmits CRC LSB first, unlike standard network protocols which transmit MSB first.
 
 ---
 
