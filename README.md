@@ -35,8 +35,8 @@ Firmware and embedded systems interviews evaluate foundational C knowledge with 
 | **[Day 08](./Day-08-UART-Ring-Buffer/)** | **UART Peripheral & Circular FIFO Ring Buffer** | Lock-free SPSC circular buffer, overflow protection, atomic head/tail pointers | ✅ Complete (1 Program) |
 | **[Day 09](./Day-09-RS485-Modbus-RTU-Timing/)** | **RS-485 Modbus RTU Framing & Transceiver Timing** | Half-duplex DE/RE timing, `TRMT` vs `TXIF` shift-register trap, fast CRC-16 table | ✅ Complete (1 Program) |
 | **[Day 10](./Day-10-I2C-Recovery-And-EEPROM/)** | **I2C Bus Protocol, 9-Clock Recovery & EEPROM** | Open-drain pull-up sizing, page boundary rollovers, 9-clock bus-clear recovery routine | ✅ Complete (1 Program) |
-| **Day 11** | **SPI Bus Modes (0–3) & Sensor Interfacing** | CPOL/CPHA timing, PT100 RTD 3-wire bridge compensation, series damping resistors | ⏳ Next Up |
-| **Day 12** | **ADC Mechanics, Calibration & Digital Filters** | Resolution step size, sampling capacitor acquisition time, fixed-point EMA & Median-3 | ⏳ Upcoming |
+| **[Day 11](./Day-11-SPI-Modes-And-Sensor-Interfacing/)** | **SPI Bus Modes (0–3) & Sensor Interfacing** | CPOL/CPHA timing, PT100 RTD 3-wire bridge compensation, series damping resistors | ✅ Complete (1 Program) |
+| **Day 12** | **ADC Mechanics, Calibration & Digital Filters** | Resolution step size, sampling capacitor acquisition time, fixed-point EMA & Median-3 | ⏳ Next Up |
 | **Day 13** | **Hardware Timers, PWM & Software Timer Wheels** | Prescalers, capture/compare, tick-list non-blocking software timers | ⏳ Upcoming |
 | **Day 14** | **Week 2 Silicon Bring-Up & Board Diagnostics** | 5-step hardware bring-up sequence, cold resistance, oscilloscope probing, current limit | ⏳ Upcoming |
 
@@ -135,6 +135,12 @@ Firmware and embedded systems interviews evaluate foundational C knowledge with 
 
 ### Day 10 — I2C Bus Protocol, 9-Clock Recovery & EEPROM
 1. **`01_i2c_bus_recovery.c`** — Manual 9-Clock SCL Toggling Routine for Stuck Slave SDA. If a master resets during an I2C read while a slave is driving SDA low (ACK), the bus hangs forever unless SCL is clocked 9 times.
+
+---
+
+
+### Day 11 — SPI Bus Modes (0–3) & Sensor Interfacing
+1. **`01_spi_mode_config.c`** — SPI CPOL and CPHA Mode Configuration Matrix. Mode 0 (CPOL=0, CPHA=0) captures data on the rising clock edge while idle low. Mode 3 (CPOL=1, CPHA=1) captures on rising edge while idle high.
 
 ---
 
