@@ -37,8 +37,8 @@ Firmware and embedded systems interviews evaluate foundational C knowledge with 
 | **[Day 10](./Day-10-I2C-Recovery-And-EEPROM/)** | **I2C Bus Protocol, 9-Clock Recovery & EEPROM** | Open-drain pull-up sizing, page boundary rollovers, 9-clock bus-clear recovery routine | ✅ Complete (1 Program) |
 | **[Day 11](./Day-11-SPI-Modes-And-Sensor-Interfacing/)** | **SPI Bus Modes (0–3) & Sensor Interfacing** | CPOL/CPHA timing, PT100 RTD 3-wire bridge compensation, series damping resistors | ✅ Complete (1 Program) |
 | **[Day 12](./Day-12-ADC-Digital-Filtering/)** | **ADC Mechanics, Calibration & Digital Filters** | Resolution step size, sampling capacitor acquisition time, fixed-point EMA & Median-3 | ✅ Complete (1 Program) |
-| **Day 13** | **Hardware Timers, PWM & Software Timer Wheels** | Prescalers, capture/compare, tick-list non-blocking software timers | ⏳ Next Up |
-| **Day 14** | **Week 2 Silicon Bring-Up & Board Diagnostics** | 5-step hardware bring-up sequence, cold resistance, oscilloscope probing, current limit | ⏳ Upcoming |
+| **[Day 13](./Day-13-Timers-And-Software-Timer-Wheels/)** | **Hardware Timers & Non-Blocking Software Timer Wheels** | Prescalers, capture/compare, tick-list non-blocking software timers | ✅ Complete (1 Program) |
+| **Day 14** | **Week 2 Silicon Bring-Up & Board Diagnostics** | 5-step hardware bring-up sequence, cold resistance, oscilloscope probing, current limit | ⏳ Next Up |
 
 ### ⚙️ Week 3: Data Structures, RTOS & State Machines (Days 15 – 21)
 | Module | Topic Focus | Key Concepts & Hardware Insights | Status |
@@ -147,6 +147,12 @@ Firmware and embedded systems interviews evaluate foundational C knowledge with 
 
 ### Day 12 — ADC Mechanics, Calibration & Digital Filters
 1. **`01_fixed_point_ema_filter.c`** — Integer-Only Q8 Fixed-Point EMA Filter. Floating-point math on MCUs without hardware FPU bloats code with emulation routines. Fixed-point division by 256 is a 1-cycle bit-shift (>> 8).
+
+---
+
+
+### Day 13 — Hardware Timers & Non-Blocking Software Timer Wheels
+1. **`01_software_timer.c`** — Non-Blocking Tick List Software Timer Engine. Calling delay_ms() halts the CPU and starves communication protocols. Software timers decouple timekeeping from execution.
 
 ---
 
