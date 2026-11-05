@@ -38,12 +38,12 @@ Firmware and embedded systems interviews evaluate foundational C knowledge with 
 | **[Day 11](./Day-11-SPI-Modes-And-Sensor-Interfacing/)** | **SPI Bus Modes (0–3) & Sensor Interfacing** | CPOL/CPHA timing, PT100 RTD 3-wire bridge compensation, series damping resistors | ✅ Complete (1 Program) |
 | **[Day 12](./Day-12-ADC-Digital-Filtering/)** | **ADC Mechanics, Calibration & Digital Filters** | Resolution step size, sampling capacitor acquisition time, fixed-point EMA & Median-3 | ✅ Complete (1 Program) |
 | **[Day 13](./Day-13-Timers-And-Software-Timer-Wheels/)** | **Hardware Timers & Non-Blocking Software Timer Wheels** | Prescalers, capture/compare, tick-list non-blocking software timers | ✅ Complete (1 Program) |
-| **Day 14** | **Week 2 Silicon Bring-Up & Board Diagnostics** | 5-step hardware bring-up sequence, cold resistance, oscilloscope probing, current limit | ⏳ Next Up |
+| **[Day 14](./Day-14-Silicon-Bring-Up-Diagnostics/)** | **Silicon Bring-Up & Board Diagnostics** | 5-step hardware bring-up sequence, cold resistance, oscilloscope probing, current limit | ✅ Complete (1 Program) |
 
 ### ⚙️ Week 3: Data Structures, RTOS & State Machines (Days 15 – 21)
 | Module | Topic Focus | Key Concepts & Hardware Insights | Status |
 | :---: | :--- | :--- | :---: |
-| **Day 15** | **Finite State Machines (FSM)** | Table-driven transition matrices vs switch-case, deterministic event dispatch | ⏳ Upcoming |
+| **Day 15** | **Finite State Machines (FSM)** | Table-driven transition matrices vs switch-case, deterministic event dispatch | ⏳ Next Up |
 | **Day 16** | **Memory Pools & Heap Avoidance** | Fixed-size block allocators, avoiding heap fragmentation and non-deterministic `malloc` | ⏳ Upcoming |
 | **Day 17** | **String & Packet Parsing without Heap** | Reentrant tokenizers (`strtok_r`), zero-copy frame slicing, checksum validation | ⏳ Upcoming |
 | **Day 18** | **FreeRTOS Task Mechanics & TCB** | Task states, priority preemptive scheduling, stack watermarking (`uxTaskGetStackHighWaterMark`) | ⏳ Upcoming |
@@ -153,6 +153,12 @@ Firmware and embedded systems interviews evaluate foundational C knowledge with 
 
 ### Day 13 — Hardware Timers & Non-Blocking Software Timer Wheels
 1. **`01_software_timer.c`** — Non-Blocking Tick List Software Timer Engine. Calling delay_ms() halts the CPU and starves communication protocols. Software timers decouple timekeeping from execution.
+
+---
+
+
+### Day 14 — Silicon Bring-Up & Board Diagnostics
+1. **`01_board_bringup_checklist.c`** — Deterministic 5-Step Bring-Up State Verification. Never power a prototype board directly from mains or an unconstrained battery; always set current limits to 50mA to prevent silicon destruction.
 
 ---
 
