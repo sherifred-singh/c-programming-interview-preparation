@@ -43,8 +43,8 @@ Firmware and embedded systems interviews evaluate foundational C knowledge with 
 ### ⚙️ Week 3: Data Structures, RTOS & State Machines (Days 15 – 21)
 | Module | Topic Focus | Key Concepts & Hardware Insights | Status |
 | :---: | :--- | :--- | :---: |
-| **Day 15** | **Finite State Machines (FSM)** | Table-driven transition matrices vs switch-case, deterministic event dispatch | ⏳ Next Up |
-| **Day 16** | **Memory Pools & Heap Avoidance** | Fixed-size block allocators, avoiding heap fragmentation and non-deterministic `malloc` | ⏳ Upcoming |
+| **[Day 15](./Day-15-Finite-State-Machines/)** | **Finite State Machines (FSM)** | Table-driven transition matrices vs switch-case, deterministic event dispatch | ✅ Complete (1 Program) |
+| **Day 16** | **Memory Pools & Heap Avoidance** | Fixed-size block allocators, avoiding heap fragmentation and non-deterministic `malloc` | ⏳ Next Up |
 | **Day 17** | **String & Packet Parsing without Heap** | Reentrant tokenizers (`strtok_r`), zero-copy frame slicing, checksum validation | ⏳ Upcoming |
 | **Day 18** | **FreeRTOS Task Mechanics & TCB** | Task states, priority preemptive scheduling, stack watermarking (`uxTaskGetStackHighWaterMark`) | ⏳ Upcoming |
 | **Day 19** | **FreeRTOS Synchronization: Mutex vs Semaphore** | Priority Inversion, Priority Inheritance protocol, binary vs counting semaphores | ⏳ Upcoming |
@@ -159,6 +159,12 @@ Firmware and embedded systems interviews evaluate foundational C knowledge with 
 
 ### Day 14 — Silicon Bring-Up & Board Diagnostics
 1. **`01_board_bringup_checklist.c`** — Deterministic 5-Step Bring-Up State Verification. Never power a prototype board directly from mains or an unconstrained battery; always set current limits to 50mA to prevent silicon destruction.
+
+---
+
+
+### Day 15 — Finite State Machines (FSM)
+1. **`01_table_driven_fsm.c`** — Table-Driven Finite State Machine in C99. Table-driven FSMs eliminate deeply nested switch statements and guarantee constant O(1) transition dispatch time.
 
 ---
 
