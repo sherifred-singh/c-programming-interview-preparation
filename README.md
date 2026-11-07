@@ -44,8 +44,8 @@ Firmware and embedded systems interviews evaluate foundational C knowledge with 
 | Module | Topic Focus | Key Concepts & Hardware Insights | Status |
 | :---: | :--- | :--- | :---: |
 | **[Day 15](./Day-15-Finite-State-Machines/)** | **Finite State Machines (FSM)** | Table-driven transition matrices vs switch-case, deterministic event dispatch | ✅ Complete (1 Program) |
-| **Day 16** | **Memory Pools & Heap Avoidance** | Fixed-size block allocators, avoiding heap fragmentation and non-deterministic `malloc` | ⏳ Next Up |
-| **Day 17** | **String & Packet Parsing without Heap** | Reentrant tokenizers (`strtok_r`), zero-copy frame slicing, checksum validation | ⏳ Upcoming |
+| **[Day 16](./Day-16-Memory-Pools-Heap-Avoidance/)** | **Memory Pools & Dynamic Heap Avoidance** | Fixed-size block allocators, avoiding heap fragmentation and non-deterministic `malloc` | ✅ Complete (1 Program) |
+| **Day 17** | **String & Packet Parsing without Heap** | Reentrant tokenizers (`strtok_r`), zero-copy frame slicing, checksum validation | ⏳ Next Up |
 | **Day 18** | **FreeRTOS Task Mechanics & TCB** | Task states, priority preemptive scheduling, stack watermarking (`uxTaskGetStackHighWaterMark`) | ⏳ Upcoming |
 | **Day 19** | **FreeRTOS Synchronization: Mutex vs Semaphore** | Priority Inversion, Priority Inheritance protocol, binary vs counting semaphores | ⏳ Upcoming |
 | **Day 20** | **FreeRTOS Queues & ISR Context Rules** | `xQueueSendFromISR`, yield from ISR flag, deferred interrupt processing (bottom halves) | ⏳ Upcoming |
@@ -165,6 +165,12 @@ Firmware and embedded systems interviews evaluate foundational C knowledge with 
 
 ### Day 15 — Finite State Machines (FSM)
 1. **`01_table_driven_fsm.c`** — Table-Driven Finite State Machine in C99. Table-driven FSMs eliminate deeply nested switch statements and guarantee constant O(1) transition dispatch time.
+
+---
+
+
+### Day 16 — Memory Pools & Dynamic Heap Avoidance
+1. **`01_fixed_block_pool.c`** — Fixed-Size Block Allocator (Deterministic malloc/free Alternative). MISRA-C Rule 21.3 bans dynamic heap allocation because fragmentation causes unpredictable allocation failures after weeks of operation.
 
 ---
 
